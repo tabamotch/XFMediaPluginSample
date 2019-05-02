@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:XFMediaPluginSample" x:Class="XFMediaPluginSample.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:XFMediaPluginSample.Views" x:Class="XFMediaPluginSample.Views.MainPage" xmlns:viewModels="clr-namespace:XFMediaPluginSample.ViewModels">
+    <ContentPage.BindingContext>
+        <viewModels:MainPageViewModel />
+    </ContentPage.BindingContext>
     <ScrollView HorizontalOptions="Fill" VerticalOptions="Fill">
         <StackLayout VerticalOptions="Center">
             <!-- Place new controls here -->
             <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="Center" />
             <Frame WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center" BorderColor="Navy">
-                <ImageButton BackgroundColor="Olive" />
+                <ImageButton BackgroundColor="Olive" Command="{Binding TakePhotoCommand}" Source="{Binding ImgSource}" />
             </Frame>
         </StackLayout>
     </ScrollView>
